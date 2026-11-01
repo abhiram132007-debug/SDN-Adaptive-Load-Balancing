@@ -301,9 +301,15 @@ class LoadBalancer(app_manager.RyuApp):
             if now - s['last_seen'] > c['stale_sec'] or s['reported'] == DOWN:
                 return DOWN
         f = 0.8 if s['status'] == OVERLOADED else 1.0      # hysteresis
+
+        # Use both OpenFlow flow counts and server-reported active TCP
+        # connections. The larger value avoids under-counting connections
+        # when a flow-statistics poll has not completed yet.
+        active_conns = max(s['flows'] + s['pending'], s['rep_conns'] or 0)
+
         over = ((s['cpu'] is not None and s['cpu'] > c['cpu_high'] * f)
                 or (s['lat_ema'] is not None and s['lat_ema'] > c['lat_high'] * f)
-                or (s['flows'] + s['pending'] > c['conn_high'] * f))
+                or (active_conns > c['conn_high'] * f))
         return OVERLOADED if over else UP
 
     def _update_health(self):
