@@ -14,7 +14,7 @@ A separate telemetry sender collects server and switch measurements and sends th
 > These instructions are written for a new Ubuntu/Mininet user. Run the terminals in the order shown. Do not run Mininet commands such as `h1 ...` in a normal Ubuntu shell; those commands belong at the `mininet>` prompt.
 
 ---
-## 20. Team members
+##  Project 20. Team members
 
 **Team 15**
 
