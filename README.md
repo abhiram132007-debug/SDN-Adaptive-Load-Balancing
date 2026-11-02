@@ -571,17 +571,23 @@ The four graphs are stored in `graphs/`: average latency, P95 latency, throughpu
 3. In the Ryu terminal, press `Ctrl+C`.
 4. If Mininet needs cleanup, run `sudo mn -c` from a normal Ubuntu terminal.
 
-## 19. Rubric demonstration checklist
+[rubric_mapping.md](https://github.com/user-attachments/files/34256483/rubric_mapping.md)
 
-- [ ] Multiple TCP application servers start.
-- [ ] Concurrent client requests complete.
-- [ ] Server CPU, memory, latency and active connections are monitored.
-- [ ] Open vSwitch port traffic is monitored.
-- [ ] Round Robin and Adaptive strategies can be switched at runtime.
-- [ ] Overloaded Server 2 is detected and excluded from new Adaptive VIP connections.
-- [ ] A failed server is detected and new traffic uses healthy servers.
-- [ ] A recovered server returns to the eligible server pool.
-- [ ] Performance comparison and network statistics are available in `results/` and `graphs/`.
+## 19. Rubric mapping (from the course rubric)
+
+| Rubric item | Where it's satisfied |
+|---|---|
+| Problem Understanding & Architecture | §1 requirements and features, §2 architecture diagram and address/port plan |
+| TCP/UDP Socket Implementation | `source/server.py` (threaded TCP servers `srv1`, `srv2`, `srv3`), `source/client.py` (concurrent TCP clients) |
+| Mininet + SDN Implementation | `source/topography.py` (Mininet topology, OpenFlow 1.3 switch `s1`), `source/lb_controller.py` (Ryu controller with VIP flow rules) |
+| Socket–SDN Integration | Clients connect to the VIP `10.0.0.100:5000`, and `lb_controller.py` rewrites flows to the chosen server; `source/telemetry_sender.py` feeds server and network metrics to the controller REST API (§15) |
+| Initial Testing & Demo | §7 startup, §8 system verification, `docs/test_cases.md` |
+| Complete Application Functionality | §9 (Round Robin and Adaptive modes), §16 recorded results: concurrent clients, server and network monitoring, strategy comparison, multiple loads (10, 25, 50 clients) |
+| Dynamic SDN Functionality | Adaptive scoring in `lb_controller.py` (connections, latency, CPU, link utilisation), runtime mode switching through `/mode` (§9, §15) |
+| Challenging Scenario / Robustness | §10 overloaded-server detection and exclusion, §11 server failure detection and recovery |
+| Performance Evaluation & Comparison | §12 repeatable experiments, §13 and `source/plot_results.py`, §14 OVS port statistics, §16 results table, `results/` and `graphs/` |
+| Documentation, Final Demo & Viva | This README, `docs/DEMO_GUIDE.md`, §19 demonstration checklist |
+
 
 ## 20. Team contribution and presentation
 
