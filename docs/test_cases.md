@@ -9,6 +9,8 @@ The results below are from the project runs captured during implementation. Perf
 ```text
 pingall
 ```
+<img width="441" height="185" alt="WhatsApp Image 2026-11-02 at 20 15 46" src="https://github.com/user-attachments/assets/f0950e53-3916-434c-9750-50bb59728d0b" />
+
 
 **Observed:** `0% dropped (30/30 received)` in the recorded run.
 
