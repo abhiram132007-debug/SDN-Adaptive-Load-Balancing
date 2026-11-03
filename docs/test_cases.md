@@ -43,6 +43,8 @@ Each experiment used five requests per client thread.
 | 10 | 50 | 50 | 0 | 347.7 | 853.2 | 19.56 |
 | 25 | 125 | 125 | 0 | 501.0 | 1356.2 | 30.64 |
 | 50 | 250 | 250 | 0 | 751.8 | 2254.6 | 39.09 |
+<img width="657" height="451" alt="image" src="https://github.com/user-attachments/assets/dce363b1-6bb2-461d-9ac2-bba1609b89af" />
+
 
 ## TC-05 — Adaptive performance
 
@@ -53,6 +55,12 @@ Each experiment used five requests per client thread.
 | 10 | 50 | 50 | 0 | 310.1 | 804.7 | 22.39 |
 | 25 | 125 | 125 | 0 | 452.1 | 1354.6 | 35.14 |
 | 50 | 250 | 250 | 0 | 642.6 | 2054.6 | 44.86 |
+<img width="713" height="399" alt="image" src="https://github.com/user-attachments/assets/a96329e6-9dc9-4893-b263-0c6085ce16f8" />
+<img width="712" height="394" alt="image" src="https://github.com/user-attachments/assets/f374ccec-d7ed-44ed-a27b-5e78a59c5dae" />
+<img width="715" height="425" alt="image" src="https://github.com/user-attachments/assets/9dac9f74-3ecc-4708-a53a-5223b95f40ce" />
+
+
+
 
 ## TC-06 — Server failure detection and traffic continuation
 
@@ -69,6 +77,8 @@ h1 python3 source/client.py --clients 20 --requests 1
 ```
 
 **Observed:** Server 2 was detected as DOWN. All 20 VIP requests succeeded; the recorded distribution was Server 1 = 13, Server 3 = 7, with no requests assigned to Server 2.
+<img width="666" height="392" alt="image" src="https://github.com/user-attachments/assets/a8b5eec5-9b18-4fc7-a422-55e2590e805c" />
+
 
 ## TC-07 — Server recovery
 
