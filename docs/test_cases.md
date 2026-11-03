@@ -17,6 +17,8 @@ pingall
 ## TC-02 — TCP application servers
 
 **Topology:** `srv1`, `srv2` and `srv3` are started automatically by `source/topography.py`.
+<img width="268" height="93" alt="image" src="https://github.com/user-attachments/assets/d1530907-cd41-4033-abcd-58518f9777c4" />
+
 
 **Observed:** All three TCP servers started and reported `UP` to the telemetry sender.
 
@@ -27,6 +29,8 @@ pingall
 ```text
 h1 python3 source/client.py --clients 20 --requests 1
 ```
+<img width="659" height="397" alt="image" src="https://github.com/user-attachments/assets/8eb73982-3598-42d7-bc24-8943224c8d33" />
+
 
 **Observed:** 20 of 20 requests succeeded in the recorded baseline run.
 
