@@ -30,6 +30,9 @@ cd ~/SDN-Adaptive-Load-Balancing
 source ~/ryu-env/bin/activate
 ryu-manager --verbose source/lb_controller.py
 ```
+```bash
+cd ~/SDN-Adaptive-Load-Balancing && source ~/ryu-env/bin/activate && ryu-manager --verbose source/lb_controller.py
+```
 
 Wait until Ryu reports that the WSGI server is listening on port `8080`. Leave this terminal running. Do not press `Ctrl+C`.
 
