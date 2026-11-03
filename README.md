@@ -79,6 +79,8 @@ flowchart TB
 | Telemetry/root interface | `10.0.0.254/8` | Host-side access to Mininet servers and controller REST API |
 
 Switch port mapping: `h1=1`, `h2=2`, `h3=3`, `srv1=4`, `srv2=5`, `srv3=6`, root/telemetry interface `=7`. These values must remain consistent with `source/topography.py` and `source/lb_controller.py`.
+![Uploading image.png…]()
+
 
 ## 3. Repository layout
 
