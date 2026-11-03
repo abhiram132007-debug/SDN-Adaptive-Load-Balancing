@@ -91,6 +91,10 @@ srv2 python3 "$(pwd)/source/server.py" --name srv2 --delay 0.20 > /tmp/srv2.log 
 Wait for telemetry and check `GET /state` until Server 2 reports `UP`.
 
 **Observed:** Server 2 returned to UP. In the recorded post-recovery VIP test, all 20 requests succeeded and the distribution was Server 1 = 10, Server 2 = 7, Server 3 = 3. The client output identified Server 2 by IP address `10.0.0.12` in that run.
+<img width="504" height="760" alt="image" src="https://github.com/user-attachments/assets/c4f20675-036c-4ebc-8a06-0f456f04d049" />
+<img width="916" height="469" alt="image" src="https://github.com/user-attachments/assets/bea68115-023d-4ddb-8537-0fa38f22debd" />
+
+
 
 ## TC-08 — Overloaded-server detection and exclusion
 
@@ -112,6 +116,7 @@ h1 python3 source/client.py --target 10.0.0.12 --clients 40 --requests 100 --gap
 ```text
 h1 python3 source/client.py --clients 20 --requests 1 --label overload_exclusion
 ```
+<img width="875" height="419" alt="image" src="https://github.com/user-attachments/assets/5427f87a-9d9b-4182-8fa9-b05739366149" />
 
 6. Stop the background direct-load client, wait for Server 2 to return to UP, and restore `conn_high` to 30.
 
@@ -126,6 +131,8 @@ sudo ovs-ofctl -O OpenFlow13 dump-ports s1
 ```
 
 **Observed in the captured port-statistics snapshot:** 8 switch ports; the displayed RX drops, TX drops, RX errors, TX errors and collisions were zero.
+<img width="886" height="690" alt="image" src="https://github.com/user-attachments/assets/5159db01-f36d-459d-b0f3-f453be249719" />
+
 
 ## Notes
 
