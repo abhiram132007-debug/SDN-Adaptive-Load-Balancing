@@ -82,6 +82,11 @@ Switch port mapping: `h1=1`, `h2=2`, `h3=3`, `srv1=4`, `srv2=5`, `srv3=6`, root/
 ![Uploading image.png…]()
 
 
+https://github.com/user-attachments/assets/dd041c70-04e1-4ce8-b478-98696639dd5a
+
+
+
+
 ## 3. Repository layout
 
 ```text
