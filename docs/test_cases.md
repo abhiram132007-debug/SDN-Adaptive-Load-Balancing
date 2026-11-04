@@ -121,6 +121,8 @@ h1 python3 source/client.py --clients 20 --requests 1 --label overload_exclusion
 6. Stop the background direct-load client, wait for Server 2 to return to UP, and restore `conn_high` to 30.
 
 **Observed:** The controller reported Server 2 as `OVERLOADED` with 38–40 active connections. The VIP exclusion test completed with 20 successful requests and 0 failures. Its recorded distribution was Server 1 = 13, Server 3 = 7; Server 2 received zero new VIP requests. After the direct load ended, all three servers returned to UP and telemetry was fresh.
+<img width="862" height="125" alt="WhatsApp Image 2026-11-04 at 06 13 37" src="https://github.com/user-attachments/assets/e425fca5-b531-48c6-a22a-0a8469a05356" />
+
 
 ## TC-09 — Open vSwitch port statistics
 
